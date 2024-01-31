@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  api:
+    container_name: api
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./docker/python/Dockerfile
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: "2"
+    command: "python start.py"
