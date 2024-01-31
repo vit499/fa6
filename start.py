@@ -15,4 +15,4 @@ def main() -> None:
 if __name__ == "__main__":
     main()
     logger.info(f"Starting server on port {settings.port}")
-    uvicorn.run("app.main:app", port=settings.port)
+    uvicorn.run("app.main:app", host=settings.host, port=settings.port)
