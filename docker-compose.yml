@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     build:
       context: ./
+    ports:
+      - 0.0.0.0:80:${PORT}
     logging:
       driver: "json-file"
       options:
