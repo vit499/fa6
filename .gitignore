@@ -6,11 +6,6 @@ venv/
 .vscode/
 .pytest_cache
 
-config.py
-local_settings.py
-settings.py
-experimental/
 
-pgdata/
 
 
