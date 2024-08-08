@@ -1,13 +1,13 @@
 version: "3"
 
 services:
-  api:
-    container_name: api
+  fa6:
+    container_name: fa6
     restart: unless-stopped
     build:
       context: ./
     ports:
-      - 0.0.0.0:80:${PORT}
+      - 0.0.0.0:${PORT}:${PORT}
     logging:
       driver: "json-file"
       options:
