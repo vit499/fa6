@@ -14,9 +14,3 @@ services:
         max-size: 10m
         max-file: "2"
     command: "python start.py"
-    networks:
-      - v1-network
-
-networks:
-  v1-network:
-    external: true
