@@ -8,6 +8,9 @@ services:
       context: ./
     ports:
       - 0.0.0.0:${PORT}:${PORT}
+    volumes:
+      - ./nvp:/app/nvp
+      - ./logs:/app/logs
     logging:
       driver: "json-file"
       options:
