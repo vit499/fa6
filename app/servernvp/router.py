@@ -16,7 +16,7 @@ nvp_route = APIRouter()
 
 # handler для устройства, загрузка файла настроек от устройства на сервер
 @nvp_route.post('/nvp')
-async def nvp_upload(request: Request, object_imei: str = Form(...), file: Optional[UploadFile] = File(None)):
+async def nvp_upload(request: Request, object_imei: str = Form(None), file: Optional[UploadFile] = File(None)):
     logger.info("post upload")
 
     # data = await request.form()

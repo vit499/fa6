@@ -22,11 +22,13 @@ app.include_router(
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
     start_time = time.time()
-    logger.info(f"req: {request.url}")
-    if request.headers.get('content-type') == 'application/x-www-form-urlencoded':
+    content_type = request.headers.get('content-type')
+    content_length = request.headers.get('content-length')
+    logger.info(f"req: {request.url} content-type: {content_type}, len={content_length}")
+    if content_type is not None and content_type.startswith('application/x-www-form-urlencoded'):
         a = dict(await request.form())
         logger.info(f"content: {a}")
-    if request.headers.get('content-type') == 'multipart/form-data':
+    if content_type is not None and content_type.startswith('multipart/form-data'):
         b = dict(await request.form())
         logger.info(f"content: {b}")
     response: Response = await call_next(request)
