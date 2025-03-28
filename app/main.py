@@ -16,7 +16,7 @@ templates = Jinja2Templates(directory=dir_templates)
 
 app.include_router(
     nvp_route,
-    prefix="/nvp"
+    prefix="/wpro"
 )
 
 @app.middleware("http")
